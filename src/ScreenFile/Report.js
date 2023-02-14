@@ -66,13 +66,13 @@ export default function Report(props) {
     } catch (e) {
       setLoader(false);
       console.log('catch in ....REport api  in Report page', e);
-      toast.show('Something went wrong!, Try again later.', {
-        type: 'danger',
-        placement: 'bottom',
-        duration: 3000,
-        offset: 30,
-        animationType: 'slide-in',
-      });
+      // toast.show('Something went wrong!, Try again later.', {
+      //   type: 'danger',
+      //   placement: 'bottom',
+      //   duration: 3000,
+      //   offset: 30,
+      //   animationType: 'slide-in',
+      // });
     }
   };
 
