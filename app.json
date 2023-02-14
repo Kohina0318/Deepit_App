@@ -1,0 +1,5 @@
+{
+  "name": "deeptiApp",
+  "displayName": "deeptiApp",
+  "android":{"softwareKeyboardLayoutMode": "pan"}
+}
