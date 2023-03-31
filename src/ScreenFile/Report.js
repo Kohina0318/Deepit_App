@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Colors} from '../config/Colors';
-import {FontFamily} from '../config/FontFamily';
-import {Avatar} from '@rneui/themed';
 import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, Dimensions, StatusBar} from 'react-native';
 import Header from '../Component/Header';
-import FullsizeButton from '../Component/FullsizeButton';
 import {MyThemeClass} from '../Component/Theme/ThemeDarkLightColor';
 import {ReportFlatList} from '../Component/FlateListData';
 const {width, height} = Dimensions.get('screen');
@@ -49,7 +46,6 @@ export default function Report(props) {
     var ed = moment().endOf('month').format('DD-MM-YYYY');
     try {
       var res = await getAttendance(regestrationNo, sd, ed);
-      console.log('Attendance.....data-->', res);
       if (res.status == 'true') {
         setReportData(res.data);
         setLoader(false);
@@ -66,13 +62,7 @@ export default function Report(props) {
     } catch (e) {
       setLoader(false);
       console.log('catch in ....REport api  in Report page', e);
-      // toast.show('Something went wrong!, Try again later.', {
-      //   type: 'danger',
-      //   placement: 'bottom',
-      //   duration: 3000,
-      //   offset: 30,
-      //   animationType: 'slide-in',
-      // });
+      
     }
   };
 
@@ -86,10 +76,8 @@ export default function Report(props) {
     var startDay = moment(startDate).format('DD-MM-YYYY');
     var endDay = moment(endDate).format('DD-MM-YYYY');
 
-    console.log('dates>>>>>>>>>>>>>>>>>>>>>>>>>',startDay,endDay)
     try {
       var res = await getAttendance(regestrationNo, startDay, endDay);
-      console.log('Attendance.....data-->', res);
       if (res.status == 'true') {
         setReportData(res.data);
         setLoader(false);
@@ -106,13 +94,7 @@ export default function Report(props) {
     } catch (e) {
       setLoader(false);
       console.log('catch in ....REport api  in Report page', e);
-      // toast.show('Something went wrong!, Try again later.', {
-      //   type: 'danger',
-      //   placement: 'bottom',
-      //   duration: 3000,
-      //   offset: 30,
-      //   animationType: 'slide-in',
-      // });
+     
     }
   };
 

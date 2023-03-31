@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Colors} from '../config/Colors';
 import {FontFamily} from '../config/FontFamily';
-import {Avatar} from '@rneui/themed';
 import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, Dimensions, StatusBar} from 'react-native';
 import Header from '../Component/Header';
@@ -12,7 +11,6 @@ import {useSelector} from 'react-redux';
 import {useToast} from 'react-native-toast-notifications';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {getMarkAttendance} from '../Repository/CommonRepository';
-import {NetworkInfo} from 'react-native-network-info';
 import Loader from '../Component/Loader/Loader';
 import publicIP from 'react-native-public-ip';
 
@@ -54,7 +52,6 @@ export default function Dashboard(props) {
 
     try {
       const res = await getMarkAttendance(onScreen,ipAddress);
-      console.log('...getMarkAttendance api data in dashboard....=>', res);
       if (res.status === true) {
         setInTime(res.data.attendance_in_time);
         setOutTime(res.data.attendance_out_time);

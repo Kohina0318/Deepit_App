@@ -36,7 +36,6 @@ export default function Splash(props) {
     <View
       style={{
         ...styles.MainContainer,
-        // backgroundColor: themecolor.THEMECOLOR,
       }}>
       <StatusBar translucent backgroundColor={'transparent'} />
       <Video

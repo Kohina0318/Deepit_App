@@ -54,7 +54,6 @@ export default function Header(props) {
     props.setLoader(true)
     try {
       var res = await getLogOut();
-      console.log('HandleLogout api...in header===>', res);
       if (res.status == 'true') {
         await AsyncStorage.removeItem('@UserData');
         await AsyncStorage.removeItem('@token');
@@ -78,10 +77,8 @@ export default function Header(props) {
   };
 
   const handleChange = value => {
-    // console.log("Value>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",value.dateFrom.toUTCString().substring(4, 16));
-    props.setStartDate(value.dateFrom);
+     props.setStartDate(value.dateFrom);
     props.setEndDate(value.dateTo);
-    //  console.log("value>>>>>>>>>>>>>>>>",value)
   };
 
   const OnClick = () => {

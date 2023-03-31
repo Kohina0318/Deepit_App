@@ -11,13 +11,8 @@ import {
   Linking,
   TouchableOpacity,
 } from 'react-native';
-import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {FontSize} from '../config/Fonts';
-import {FontFamily} from '../config/FontFamily';
-import {Colors} from '../config/Colors';
 import FullSizeButton from '../Component/FullsizeButton';
-import BottomNavigationStack from '../Navigation/BottomNavigationStack';
 import {useSelector, useDispatch} from 'react-redux';
 import {MyThemeClass} from '../Component/Theme/ThemeDarkLightColor';
 import {useNavigation} from '@react-navigation/native';
@@ -72,8 +67,7 @@ export default function Login(props) {
       setLoader(true)
       try {
         const res = await postLoginProcess(mobileNo, password);
-        console.log('Data......login api ....line 42..>>>', res);
-
+      
         if (res.status == 'true') {
           await AsyncStorage.setItem('@UserData', JSON.stringify(res.data));
           await AsyncStorage.setItem('@token', res.data.token);
