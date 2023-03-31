@@ -22,7 +22,6 @@ export default FullsizeButton = props => {
 
   const styles = StyleSheet.create({
     bigButton: {
-      // backgroundColor: props.backgroundColor,
       width: props.width,
       alignSelf: 'center',
       alignItems: 'center',

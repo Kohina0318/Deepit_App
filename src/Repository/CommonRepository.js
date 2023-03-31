@@ -1,4 +1,4 @@
-import { BackHandler, Alert, ToastAndroid } from 'react-native';
+import {  ToastAndroid } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { navigateToClearStack } from '../Navigation/NavigationService';
 
@@ -12,7 +12,7 @@ const postLoginProcess = async (mobileNo, password) => {
       },
     );
     const result = await response.json();
-    console.log('Login Repository data....', result);
+  
     if (result.status) {
       return result;
     } else {
@@ -38,7 +38,6 @@ const getLogOut = async () => {
       },
     );
     const result = await response.json();
-    console.log('getLogOut Repository data....', result);
     
     if (result.token_status == 'false') {
       await AsyncStorage.removeItem('@UserData');
@@ -74,7 +73,6 @@ const getAttendance = async (rno, sd, ed) => {
       },
     );
     const result = await response.json();
-    console.log('Attandance Repository data....', result);
     
     if (result.token_status == 'false') {
       await AsyncStorage.removeItem('@UserData');
@@ -110,7 +108,6 @@ const getMarkAttendance = async (onscreen, ipadd) => {
       },
     );
     const result = await response.json();
-    console.log('getMarkAttendance Repository data....', result);
 
     if (result.token_status == 'false') {
       await AsyncStorage.removeItem('@UserData');
